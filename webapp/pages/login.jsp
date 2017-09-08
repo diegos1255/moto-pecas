@@ -1,35 +1,37 @@
-<div class="container">
+<%@ page contentType="text/html; charset=utf-8"%>
 
-	<div class="row" id="pwd-container">
-		<div class="col-md-4"></div>
+<html>
 
-		<div class="col-md-4">
-			<section class="login-form">
-				<form method="post" action="#" role="login">
-					<img src="http://i.imgur.com/RcmcLv4.png" class="img-responsive"
-						alt="" /> <input type="email" name="email" placeholder="Email"
-						required class="form-control input-lg" /> <input type="password"
-						class="form-control input-lg" id="password" placeholder="Password"
-						required="" />
+<head>
 
+	<link rel="stylesheet" type="text/css" href="/moto-pecas/css/style.css" />
 
-					<div class="pwstrength_viewport_progress"></div>
+    <!-- Plugin CSS -->
+    <link href="/moto-pecas/css/bootstrap.css" rel="stylesheet">
+	
+	<title>Moto Peças - Vitória</title>	
+	
+</head>
 
+<body>
 
-					<button type="submit" name="go"
-						class="btn btn-lg btn-primary btn-block">Sign in</button>
+	<div>
+		
+		<p>Usuário</p>
+		<input type="text" class="form-control" /> 
+		
+		<br />
+		
+		<p>Senha</p>
+		<input type="text" class="form-control" /> 
+		
+		<br />
 
-				</form>
-
-				<div class="form-links">
-					<a href="#">www.website.com</a>
-				</div>
-			</section>
-		</div>
-
-		<div class="col-md-4"></div>
-
+		<button class="btn btn-danger">Login</button>
 
 	</div>
 
-</div>
+</body>
+
+
+</html>
