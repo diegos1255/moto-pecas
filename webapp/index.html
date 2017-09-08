@@ -1,55 +1,174 @@
 <!DOCTYPE html>
 <html>
 	<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<link rel="stylesheet" type="text/css"
-		href="css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css"
-		href="css/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Moto Peças</title>
 
-	<!--Import jQuery before materialize.js-->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	
-	<script src="js/angular.js"></script>
-	<script src="js/angular-ui-router.min.js"></script>
-	<script src="controller/app.js"></script>
-	<script src="controller/home/homeController.js"></script>
-	<script src="js/ui-bootstrap-tpls-2.5.0.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-	<script src="js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-	<script src="js/bootbox.min.js"></script>
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
-	<!-- <link rel="icon" href="resources/img/icon.png" type="image/x-icon"> -->
+    <!-- Plugin CSS -->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
-	<title>Moto Peças</title>
+    <!-- Custom styles for this template -->
+    <link href="css/sb-admin.css" rel="stylesheet">
 
-	<!-- <base href="/"> -->
+  </head>
 
-</head>
+ <body ng-app="app" class="fixed-nav sticky-footer bg-dark" id="page-top">
 
-	<body ng-app="app">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+          <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Dashboard">
+            <a class="nav-link" ui-sref="">
+              <i class="fa fa-fw fa-dashboard"></i>
+              <span class="nav-link-text">
+                Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+            <a class="nav-link" ui-sref="home">
+              <i class="fa fa-fw fa-area-chart"></i>
+              <span class="nav-link-text">
+                Menu</span>
+            </a>
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+            <a class="nav-link" href="#">
+              <i class="fa fa-fw fa-table"></i>
+              <span class="nav-link-text">
+                Menu</span>
+            </a>
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+              <i class="fa fa-fw fa-wrench"></i>
+              <span class="nav-link-text">
+                Menu</span>
+            </a>
+            <ul class="sidenav-second-level collapse" id="collapseComponents">
+              <li>
+                <a href="static-nav.html">Menu</a>
+              </li>
+              <li>
+                <a href="#">Menu</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="navbar-nav sidenav-toggler">
+          <li class="nav-item">
+            <a class="nav-link text-center" id="sidenavToggler">
+              <i class="fa fa-fw fa-angle-left"></i>
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <form class="form-inline my-2 my-lg-0 mr-lg-2">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-primary" type="button">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </span>
+              </div>
+            </form>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+              <i class="fa fa-fw fa-sign-out"></i>
+              Sair</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-		<div class="geral">
+    <div class="content-wrapper">
 
-			<nav class="navbar navbar-default" role="navigation">
-				<div class="navbar-header">
-				</div>
-				<ul class="nav navbar-nav">
-					<li><a ui-sref="home">Home</a></li>
-					<li><a ui-sref="nomes">Nomes</a></li>
-					<li><a ui-sref="login">Cadastro</a></li>
-					<li><a ui-sref="home">Estoque</a></li>
-					<li><a ui-sref="home">Usuários</a></li>
-				</ul>
-			</nav>
+      <div class="container-fluid">
 
-			<div class="container">
-				<div ui-view></div>	
-			</div>
-			
+        <div class="container">
+			<div ui-view>
+				
+			</div>	
 		</div>
 
-	</body>
+      </div>
+      <!-- /.container-fluid -->
+
+    </div>
+    <!-- /.content-wrapper -->
+
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Todos os direitos reservados - Moto Peças 2017</small>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Logout</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Deseja realmente sair ?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+            <a class="btn btn-primary" href="login.html">Sim</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/sb-admin.min.js"></script>
+    
+    <script src="js/angular.js"></script>
+	<script src="js/angular-ui-router.min.js"></script>
+	<script src="controller/app.js"></script>
+
+  </body>
+
 </html>
