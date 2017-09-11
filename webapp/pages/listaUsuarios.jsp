@@ -8,6 +8,7 @@
 				cellspacing="0">
 				<thead>
 					<tr>
+						<th>Código</th>
 						<th>Nome</th>
 						<th>Login</th>
 						<th>E-mail</th>
@@ -17,11 +18,12 @@
 				</thead>
 				<tbody ng-repeat="u in container.usuarios">
 					<tr>
+						<td>{{u.id}}</td>
 						<td>{{u.nome}}</td>
 						<td>{{u.login}}</td>
 						<td>{{u.email}}</td>
 						<td>{{u.perfil}}</td>
-						<td>11/09/2017</td>
+						<td>{{u.dataCadastro}}</td>
 					</tr>
 				</tbody>
 			</table>
