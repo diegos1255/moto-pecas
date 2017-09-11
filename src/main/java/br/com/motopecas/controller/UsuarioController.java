@@ -1,6 +1,9 @@
 package br.com.motopecas.controller;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +18,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import br.com.motopecas.entity.Usuario;
 import br.com.motopecas.service.UsuarioService;
 
+/**
+ * 
+ * @author diego
+ *
+ */
 @Controller
 @RequestMapping("usuario")
 @Transactional
@@ -23,23 +31,59 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioService usuarioService;
 	
-	@SuppressWarnings("rawtypes")
-	@RequestMapping(value="/init", method=RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<?> init(){
-
-		Map<String, Object> retorno = new HashMap<String, Object>();
-
-		return new ResponseEntity<Map>(retorno, HttpStatus.OK);
-	}
-
+	/**
+	 * Metodo responsavel por salvar o usuario.
+	 * @param usuario
+	 * @return
+	 */
 	@SuppressWarnings("rawtypes")
 	@RequestMapping(value = "/salvar", method = RequestMethod.POST, produces = "application/json")
 	public ResponseEntity<?> salvar(@RequestBody Usuario usuario){
 		
+		usuario.setDataCadastro(new Date());
 		this.usuarioService.salvar(usuario);
 		
+		/*Gson gson = new Gson();
+		Type type = new TypeToken<Usuario>() {}.getType();
+		Usuario u = gson.fromJson(usuario, type);*/
+		
 		Map<String, Object> retorno = new HashMap<String, Object>();
-		retorno.put("msg", "Usuario " + usuario.getNome() + " cadastrado com sucesso.");
+		
+		/*if (usuarioExiste) {
+			retorno.put("erro", "Usuário " + usuario.getNome() + ", já existe.");
+			return new ResponseEntity<Map>(retorno, HttpStatus.INTERNAL_SERVER_ERROR);
+		}*/
+		
+		retorno.put("msg", "Usuário " + usuario.getNome() + " cadastrado com sucesso.");
+		
+		return new ResponseEntity<Map>(retorno, HttpStatus.OK);
+	}
+
+	@SuppressWarnings("rawtypes")
+	@RequestMapping(value = "/listaUsuarios", method = RequestMethod.GET, produces = "application/json")
+	public ResponseEntity<?> listaUsuarios(){
+		
+		List<Usuario> listaUsuarios = new ArrayList<Usuario>();
+		
+		//listaUsuarios = this.usuarioService.listaUsuarios();
+		
+		Usuario u = new Usuario();
+		u.setNome("Diego");
+		u.setLogin("diego");
+		u.setEmail("diego.santospo@gmail.com");
+		u.setPerfil("Admin");
+		listaUsuarios.add(u);
+		
+		Usuario u1 = new Usuario();
+		u1.setNome("Leonardo");
+		u1.setLogin("leonardo");
+		u1.setEmail("leonardo@gmail.com");
+		u1.setPerfil("User");
+		listaUsuarios.add(u1);
+		
+		Map<String, Object> retorno = new HashMap<String, Object>();
+		
+		retorno.put("usuarios", listaUsuarios);
 		
 		return new ResponseEntity<Map>(retorno, HttpStatus.OK);
 	}

@@ -1,6 +1,11 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <div ng-controller="UsuarioController" ng-init="init()">
 
+	<div class="card-header">
+       <i class="fa fa-table"></i>
+       Cadastro de Usuários
+     </div>
+
 	<div class="card-body">
 		<div class="form-group">
 			<label for="exampleInputName">Nome</label> <input type="text"
@@ -22,6 +27,14 @@
 		<div class="form-group">
 			<label for="exampleInputEmail1">E-mail</label> <input type="text"
 				class="form-control" ng-model="container.email" placeholder="Digite o e-mail">
+		</div>
+
+		<div class="form-group">
+			<label>Perfil</label>
+			<select class="form-control heigthComboUsuario"
+                data-ng-model="container.perfil" ng-init="container.perfil = perfis[0]"
+                ng-options="g.descricao for g in perfis track by g.descricao" >
+        	</select>
 		</div>
 
 		<button class="btn btn-primary btn-block" type="submit"

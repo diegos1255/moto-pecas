@@ -1,21 +1,28 @@
 package br.com.motopecas.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.stereotype.Component;
 
 /**
  * 
- * @author 
+ * @author Diego
  * 
  * Classe que representa a entidade usuario
  *
  */
 @Entity
 @Table(name="USUARIO")
+@Component
 public class Usuario {
 	
 	@Id 
@@ -35,22 +42,12 @@ public class Usuario {
 	@Column(name = "EMAIL")
 	private String email;
 	
-	/**
-	 * Construtor da classe.
-	 * @param id
-	 * @param nome
-	 * @param login
-	 * @param senha
-	 * @param email
-	 */
-	public Usuario(Long id, String nome, String login, String senha, String email ) {
-		
-		this.id = id;
-		this.nome = nome;
-		this.login = login;
-		this.senha = senha;
-		this.email = email;
-	}
+	@Temporal(TemporalType.DATE)
+	@Column(name = "DATA_CADASTRO")
+	private Date dataCadastro;
+	
+	@Column (name = "PERFIL")
+	private String perfil;
 
 	/**
 	 * @return the id
@@ -122,4 +119,32 @@ public class Usuario {
 		this.email = email;
 	}
 
+	/**
+	 * @return the dataCadastro
+	 */
+	public Date getDataCadastro() {
+		return dataCadastro;
+	}
+
+	/**
+	 * @param dataCadastro the dataCadastro to set
+	 */
+	public void setDataCadastro(Date dataCadastro) {
+		this.dataCadastro = dataCadastro;
+	}
+
+	/**
+	 * @return the perfil
+	 */
+	public String getPerfil() {
+		return perfil;
+	}
+
+	/**
+	 * @param perfil the perfil to set
+	 */
+	public void setPerfil(String perfil) {
+		this.perfil = perfil;
+	}
+	
 }

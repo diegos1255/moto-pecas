@@ -42,6 +42,10 @@ html, body {height:100%;}
     color: #333;
 } 
 
+.heigthComboUsuario {
+	height: auto !important;
+}
+
 /*
 Reference:
 http://www.bootstrapzen.com/item/135/simple-login-form-logo/
