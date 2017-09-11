@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import br.com.motopecas.entity.Usuario;
 
@@ -15,6 +16,7 @@ import br.com.motopecas.entity.Usuario;
  *
  */
 @Repository
+@EnableTransactionManagement
 public class UsuarioDao {
 
 	@PersistenceContext
@@ -55,7 +57,7 @@ public class UsuarioDao {
     
     @SuppressWarnings("unchecked")
 	public List<Usuario> listaUsuario () {
-    	return (List<Usuario>) this.entityManager.createQuery("select u from Usuario u");
+    	return (List<Usuario>) this.entityManager.createQuery("select u from Usuario u").getResultList();
     }
     
 	
