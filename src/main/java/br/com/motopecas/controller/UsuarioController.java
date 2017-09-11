@@ -65,21 +65,7 @@ public class UsuarioController {
 		
 		List<Usuario> listaUsuarios = new ArrayList<Usuario>();
 		
-		//listaUsuarios = this.usuarioService.listaUsuarios();
-		
-		Usuario u = new Usuario();
-		u.setNome("Diego");
-		u.setLogin("diego");
-		u.setEmail("diego.santospo@gmail.com");
-		u.setPerfil("Admin");
-		listaUsuarios.add(u);
-		
-		Usuario u1 = new Usuario();
-		u1.setNome("Leonardo");
-		u1.setLogin("leonardo");
-		u1.setEmail("leonardo@gmail.com");
-		u1.setPerfil("User");
-		listaUsuarios.add(u1);
+		listaUsuarios = this.usuarioService.listaUsuarios();
 		
 		Map<String, Object> retorno = new HashMap<String, Object>();
 		
