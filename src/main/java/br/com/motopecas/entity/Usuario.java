@@ -7,12 +7,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 /**
  * 
@@ -24,6 +25,10 @@ import org.springframework.transaction.annotation.Transactional;
 @Entity
 @Table(name="USUARIO")
 @Component
+@NamedQueries({
+    @NamedQuery(name="Usuario.findAll",
+                query="select u from Usuario u")
+}) 
 public class Usuario {
 	
 	@Id 

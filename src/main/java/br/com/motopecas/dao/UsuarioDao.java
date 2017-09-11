@@ -57,7 +57,7 @@ public class UsuarioDao {
     
     @SuppressWarnings("unchecked")
 	public List<Usuario> listaUsuario () {
-    	return (List<Usuario>) this.entityManager.createQuery("select u from Usuario u").getResultList();
+    	return (List<Usuario>) this.entityManager.createNamedQuery("Usuario.findAll").getResultList();
     }
     
 	
