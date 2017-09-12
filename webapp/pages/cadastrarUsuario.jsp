@@ -1,11 +1,12 @@
 <%@ page contentType="text/html; charset=utf-8"%> 
 <div ng-controller="UsuarioController" ng-init="init()">
 
-	<div class="card-header">
-       <i class="fa fa-table"></i>
-       Cadastro de Usuários
-     </div>
-	
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item" style="color: #007bff;">Você está em</li>
+		<li class="breadcrumb-item active">Gerenciar</li>
+		<li class="breadcrumb-item active">Cadastro de Usuários</li>
+	</ol>
+
 	<form name="cadastro" ng-submit="salvar()">
 	
 		<div class="card-body">

@@ -1,7 +1,11 @@
 <div ng-controller="UsuarioController" ng-init="buscaUsuarios()" style="overflow: hidden;">
-	<div class="card-header">
-		<i class="fa fa-table"></i> Usuários cadastrados
-	</div>
+	
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item" style="color: #007bff;">Você está em</li>
+		<li class="breadcrumb-item active">Gerenciar</li>
+		<li class="breadcrumb-item active">Usuários cadastrados</li>
+	</ol>
+	
 	<div class="card-body">
 	
 		<div class="form-group">
