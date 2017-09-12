@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page contentType="text/html; charset=utf-8"%> 
 <div ng-controller="UsuarioController" ng-init="init()">
 
 	<div class="card-header">
