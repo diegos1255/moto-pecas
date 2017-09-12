@@ -41,4 +41,14 @@ public class UsuarioService {
 		
 	}
 	
+	/**
+	 * Metodo responsavel por editar o usuario.
+	 * @param usuario
+	 */
+	public void editarUsuario (Usuario usuario) {
+		
+		this.usuarioDao.atualizar(usuario);
+		
+	}
+	
 }

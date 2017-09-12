@@ -54,11 +54,24 @@ public class UsuarioController {
 			return new ResponseEntity<Map>(retorno, HttpStatus.INTERNAL_SERVER_ERROR);
 		}*/
 		
-		retorno.put("msg", "Usuário " + usuario.getNome() + " cadastrado com sucesso.");
+		retorno.put("msg", "Usuário " + usuario.getNome() + ", cadastrado com sucesso.");
 		
 		return new ResponseEntity<Map>(retorno, HttpStatus.OK);
 	}
 
+	@SuppressWarnings("rawtypes")
+	@RequestMapping(value = "/editarUsuario", method = RequestMethod.PUT, produces = "application/json")
+	public ResponseEntity<?> editarUsuario(@RequestBody Usuario usuario){
+		
+		this.usuarioService.editarUsuario(usuario);
+		
+		Map<String, Object> retorno = new HashMap<String, Object>();
+		
+		retorno.put("msg", "Usuário " + usuario.getNome() + ", editado com sucesso.");
+		
+		return new ResponseEntity<Map>(retorno, HttpStatus.OK);
+	}
+	
 	@SuppressWarnings("rawtypes")
 	@RequestMapping(value = "/listaUsuarios", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<?> listaUsuarios(){

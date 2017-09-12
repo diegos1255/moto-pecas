@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ui.router']);
+var app = angular.module('app', ['ui.router', 'angularUtils.directives.dirPagination']);
 
 app.config(function($stateProvider, $locationProvider) {
 
@@ -27,7 +27,11 @@ app.config(function($stateProvider, $locationProvider) {
 	})
 	.state('cadUsuario', {
 		url: '/cadUsuario',
-		templateUrl: 'pages/usuario.jsp'
+		templateUrl: 'pages/cadastrarUsuario.jsp'
+	})
+	.state('edit', {
+		url: '/editUsuario',
+		templateUrl: 'pages/editarUsuario.jsp'
 	})
 	.state('usuarios', {
 		url: '/usuarios',
