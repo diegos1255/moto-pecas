@@ -14,6 +14,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * 
@@ -25,9 +26,10 @@ import org.springframework.stereotype.Component;
 @Entity
 @Table(name="USUARIO")
 @Component
+@Transactional
 @NamedQueries({
     @NamedQuery(name="Usuario.findAll",
-                query="select u from Usuario u")
+                query="SELECT u FROM Usuario u")
 }) 
 public class Usuario {
 	
