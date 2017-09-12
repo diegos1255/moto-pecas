@@ -103,11 +103,6 @@ app.controller("UsuarioController", function($scope, $http, $location, $rootScop
 		$scope.container.perfil.descricao = 'Selecione';
 	} 
 	
-	$scope.ordenar = function(keyname){
-        $scope.sortKey = keyname;
-        $scope.reverse = !$scope.reverse;
-    };
-
 });
 
 app.controller("EditarUsuarioController", function($scope, $http, $location, $rootScope) {

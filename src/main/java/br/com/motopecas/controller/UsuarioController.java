@@ -43,10 +43,6 @@ public class UsuarioController {
 		usuario.setDataCadastro(new Date());
 		this.usuarioService.salvar(usuario);
 		
-		/*Gson gson = new Gson();
-		Type type = new TypeToken<Usuario>() {}.getType();
-		Usuario u = gson.fromJson(usuario, type);*/
-		
 		Map<String, Object> retorno = new HashMap<String, Object>();
 		
 		/*if (usuarioExiste) {
