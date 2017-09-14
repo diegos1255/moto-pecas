@@ -59,11 +59,24 @@ public class UsuarioController {
 	@RequestMapping(value = "/editarUsuario", method = RequestMethod.PUT, produces = "application/json")
 	public ResponseEntity<?> editarUsuario(@RequestBody Usuario usuario){
 		
+		usuario.setDataCadastro(new Date());
 		this.usuarioService.editarUsuario(usuario);
 		
 		Map<String, Object> retorno = new HashMap<String, Object>();
 		
 		retorno.put("msg", "Usuário " + usuario.getNome() + ", editado com sucesso.");
+		
+		return new ResponseEntity<Map>(retorno, HttpStatus.OK);
+	}
+
+	@SuppressWarnings("rawtypes")
+	@RequestMapping(value = "/removerUsuario", method = RequestMethod.POST, produces = "application/json")
+	public ResponseEntity<?> removerUsuario(@RequestBody Usuario usuario){
+		
+		this.usuarioService.removerUsuario(usuario);
+		
+		Map<String, Object> retorno = new HashMap<String, Object>();
+		retorno.put("msg", "Usuário " + usuario.getNome() + ", removido com sucesso.");
 		
 		return new ResponseEntity<Map>(retorno, HttpStatus.OK);
 	}

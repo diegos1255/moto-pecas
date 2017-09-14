@@ -51,4 +51,12 @@ public class UsuarioService {
 		
 	}
 	
+	/**
+	 * Metodo responsavel por remover um usuario.
+	 * @param usuario
+	 */
+	public void removerUsuario(Usuario usuario) {
+		this.usuarioDao.remover(usuario);
+	}
+	
 }

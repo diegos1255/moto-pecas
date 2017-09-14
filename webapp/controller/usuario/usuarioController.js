@@ -23,7 +23,7 @@ app.controller("UsuarioController", function($scope, $http, $location, $rootScop
 			swal("Oops", "Preencha todos os campos.", "error");
 			return;
 		}
-		
+
 		var params = {
 				'nome'   : $scope.container.nome,
 				'login'  : $scope.container.login,
@@ -52,30 +52,90 @@ app.controller("UsuarioController", function($scope, $http, $location, $rootScop
 		);
 
 	}
-	
+
 	/**
 	 * Metodo responsavel por redirecionar um usuario para editar
 	 */
 	$scope.editar = function (row) {
-		
+
 		$rootScope.row = row;
-		
+
 		//redireciona para tela de edicao de usuario
 		$location.path("/editUsuario");
-		
+
 	}
-	
+
 	/**
-	 * Metodo responsavel por buscar os usuarios
+	 * Metodo responsavel por buscar os usuarios.
+	 */
+	$scope.removerUsuario = function (usuario) {
+
+		swal({
+			title: "Você tem certeza ?",
+			text: "Deseja realmente excluir o usuário, " + usuario.nome + " ?",
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+		})
+		.then((willDelete) => {
+			if (willDelete) {
+				$scope.deleteUser(usuario);
+				swal("Sucesso! O usuário " + usuario.nome + ", foi deletado com sucesso ! ", {
+					icon: "success", 
+				});
+			} else {
+				//operacao cancelada
+				//swal("Operação cancelada !"); 
+			}
+		});
+
+	}
+
+	$scope.deleteUser = function (usuario) {
+
+		var params = {
+				'id'                 : usuario.id,
+				'nome'               : usuario.nome,
+				'login'              : usuario.login,
+				'senha'              : usuario.senha,
+				'email'              : usuario.email,
+				'perfil'             : usuario.perfil
+		}
+
+		$http.post($scope.path + 'removerUsuario', params).then(
+				function success (response) {
+					if (response.status == 200) {
+						//depois que remover o usuario, atualiza a lista.
+						$scope.buscaUsuarios();
+						swal("Sucesso", response.data.msg, "success");
+
+					}
+				},
+				function error (response) {
+
+					if (response.status == 500) {
+
+						swal("Oops", "Ocorreu um erro ao remover o usuário: " + usuario.nome, "error");
+
+					}
+
+				}
+
+		);
+
+	}
+
+	/**
+	 * Metodo responsavel por remover o usuario.
 	 */
 	$scope.buscaUsuarios = function () {
-		
+
 		$http.get($scope.path + 'listaUsuarios').then(
 				function success (response) {
 					if (response.status == 200) {
-						
+
 						$scope.container.usuarios = response.data.usuarios;
-						
+
 					}
 				},
 				function error (response) {
@@ -89,9 +149,9 @@ app.controller("UsuarioController", function($scope, $http, $location, $rootScop
 				}
 
 		);
-		
+
 	}
-	
+
 	/**
 	 * Metodo responsavel por limpar todos os campos apos cadastrar um usuario.
 	 */
@@ -102,11 +162,19 @@ app.controller("UsuarioController", function($scope, $http, $location, $rootScop
 		$scope.container.email = null;
 		$scope.container.perfil.descricao = 'Selecione';
 	} 
-	
+
 });
 
+/**
+ * Controller para edicao do usuario.
+ * @param $scope
+ * @param $http
+ * @param $location
+ * @param $rootScope
+ * @returns
+ */
 app.controller("EditarUsuarioController", function($scope, $http, $location, $rootScope) {
-	
+
 	$scope.container = {};
 	$scope.path = 'usuario/';
 	$scope.container.nome = '';
@@ -120,27 +188,27 @@ app.controller("EditarUsuarioController", function($scope, $http, $location, $ro
 		];
 
 	$scope.init = function () {
-		
+
 		$scope.row = $rootScope.row;
 		$scope.container.nome = $scope.row.nome;
 		$scope.container.login = $scope.row.login;
 		$scope.container.senha = $scope.row.senha;
 		$scope.container.email = $scope.row.email;
-		
+
 	}
-	
+
 	/**
 	 * Metodo responsavel por editar o usuario.
 	 */
 	$scope.editarUsuario = function () {
-		
+
 		if ($scope.container.nome === '' || $scope.container.login === '' 
 			|| $scope.container.senha === '' || $scope.container.email === ''
 				|| $scope.container.perfil.descricao === 'Selecione') {
 			swal("Oops", "Preencha todos os campos.", "error");
 			return;
 		}
-		
+
 		var params = {
 				'id'                 : $scope.row.id,
 				'nome'               : $scope.container.nome,
@@ -150,13 +218,13 @@ app.controller("EditarUsuarioController", function($scope, $http, $location, $ro
 				'dataCadastro'       : $scope.row.dataCadastro,
 				'perfil'             : $scope.container.perfil.descricao
 		}
-		
+
 		$http.put($scope.path + 'editarUsuario', params).then(
 				function success (response) {
 					if (response.status == 200) {
-						
+
 						swal("Sucesso", response.data.msg, "success");
-						
+
 					}
 				},
 				function error (response) {
@@ -170,7 +238,7 @@ app.controller("EditarUsuarioController", function($scope, $http, $location, $ro
 				}
 
 		);
-		
+
 	}
-	
+
 });

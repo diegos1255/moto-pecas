@@ -20,45 +20,46 @@ import br.com.motopecas.entity.Usuario;
 public class UsuarioDao {
 
 	@PersistenceContext
-    private EntityManager entityManager;
+	private EntityManager entityManager;
 
 	/**
 	 * Metodo responsavel por salvar o usuario.
 	 * @param entity
 	 */
-    public void persistir(Usuario entity) {
-          this.entityManager.persist(entity);
-    }
+	public void persistir(Usuario entity) {
+		this.entityManager.persist(entity);
+	}
 
-    /**
-     * Metodo responsavel por buscar um usuario por id.
-     * @param id
-     * @return
-     */
-    public Usuario buscar(Long id) {
-          return this.entityManager.find(Usuario.class, id);
-    }
+	/**
+	 * Metodo responsavel por buscar um usuario por id.
+	 * @param id
+	 * @return
+	 */
+	public Usuario buscar(Long id) {
+		return this.entityManager.find(Usuario.class, id);
+	}
 
-    /**
-     * Metodo responsavel por remover um usuario.
-     * @param Usuario
-     */
-    public void remover(Usuario Usuario) {
-          this.entityManager.remove(Usuario);
-    }
-    
-    /**
-     * Metodo responsavel por atualizar um usuario.
-     * @param Usuario
-     */
-    public void atualizar(Usuario Usuario){
-          this.entityManager.merge(Usuario);
-    }
-    
-    @SuppressWarnings("unchecked")
+	/**
+	 * Metodo responsavel por remover um usuario.
+	 * @param Usuario
+	 */
+	public void remover(Usuario usuario) {
+		Usuario u = this.entityManager.merge(usuario);
+		this.entityManager.remove(u);
+	}
+
+	/**
+	 * Metodo responsavel por atualizar um usuario.
+	 * @param Usuario
+	 */
+	public void atualizar(Usuario Usuario){
+		this.entityManager.merge(Usuario);
+	}
+
+	@SuppressWarnings("unchecked")
 	public List<Usuario> listaUsuario () {
-    	return (List<Usuario>) this.entityManager.createNamedQuery("Usuario.findAll").getResultList();
-    }
-    
-	
+		return (List<Usuario>) this.entityManager.createNamedQuery("Usuario.findAll").getResultList();
+	}
+
+
 }

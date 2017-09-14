@@ -23,7 +23,7 @@
 						<th>Login</th>
 						<th>E-mail</th>
 						<th>Perfil</th>
-						<th>Data Cadastro</th>
+						<th>Última Atualização</th>
 						<th>Editar</th>
 						<th>Excluir</th>
 					</tr>
@@ -37,7 +37,7 @@
 						<td>{{u.perfil}}</td>
 						<td>{{u.dataCadastro}}</td>
 						<td><center><i class="fa fa-pencil" ng-click="editar(u)" aria-hidden="true"></i></center></td>
-						<td><center><i class="fa fa-trash-o" aria-hidden="true"></i></center></td>
+						<td><center><i class="fa fa-trash-o" ng-click="removerUsuario(u)" aria-hidden="true"></i></center></td>
 					</tr>
 				</tbody>
 				
