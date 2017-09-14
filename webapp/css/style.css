@@ -3,16 +3,6 @@
 	padding: 0;
 }
 
-html, body {
-	height: auto;
-}
-
-.geral {
-	min-height: 100%;
-	position: relative;
-	width: 100%;
-}
-
 .pula-linha {
 	white-space: nowrap;
 }

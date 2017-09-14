@@ -23,7 +23,7 @@ app.config(function($stateProvider, $locationProvider) {
 //	})
 	.state('cliente', {
 		url: '/cliente',
-		templateUrl: 'pages/cliente.jsp'
+		templateUrl: 'pages/cadastroCliente.jsp'
 	})
 	.state('cadUsuario', {
 		url: '/cadUsuario',

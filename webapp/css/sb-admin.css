@@ -4,8 +4,7 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-sb-admin/blob/master/LICENSE)
  */
 html {
-  position: relative;
-  min-height: 100%; }
+  position: relative;}
 
 body.sticky-footer {
   margin-bottom: 56px; }
@@ -16,7 +15,7 @@ body.fixed-nav {
   padding-top: 56px; }
 
 .content-wrapper {
-  min-height: calc(100vh - 56px);
+  
   padding-top: 1rem; }
 
 .scroll-to-top {

@@ -4,7 +4,7 @@
 	<ol class="breadcrumb">
 		<li class="breadcrumb-item" style="color: #007bff;">Você está em</li>
 		<li class="breadcrumb-item active">Gerenciar</li>
-		<li class="breadcrumb-item active">Cadastro de Usuários</li>
+		<li class="breadcrumb-item active">Cadastrar Usuários</li>
 	</ol>
 
 	<form name="cadastro" ng-submit="salvar()">
