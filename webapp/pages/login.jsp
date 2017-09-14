@@ -46,7 +46,7 @@
                 </label>
               </div>
             </div>
-            <a class="btn btn-primary btn-block" href="index.html">Login</a>
+            <a class="btn btn-primary btn-block" ui-sref="home">Login</a>
           </form>
           <div class="text-center">
             <a class="d-block small" href="forgot-password.html" style="padding-top: 10px;">Esqueceu a senha?</a>
@@ -59,6 +59,9 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/angular.js"></script>
+	<script src="js/angular-ui-router.min.js"></script>
+	<script src="controller/app.js"></script>
 
   </body>
 

@@ -29,7 +29,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 @NamedQueries({
     @NamedQuery(name="Usuario.findAll",
-                query="SELECT u FROM Usuario u")
+                query="SELECT u FROM Usuario u"),
+    @NamedQuery(name="Usuario.validaUsuario",
+    		    query="SELECT u FROM Usuario u where u.login = :login or u.email = :email")
 }) 
 public class Usuario {
 	

@@ -40,10 +40,15 @@ public class UsuarioController {
 	@RequestMapping(value = "/salvar", method = RequestMethod.POST, produces = "application/json")
 	public ResponseEntity<?> salvar(@RequestBody Usuario usuario){
 		
-		usuario.setDataCadastro(new Date());
-		this.usuarioService.salvar(usuario);
-		
 		Map<String, Object> retorno = new HashMap<String, Object>();
+		usuario.setDataCadastro(new Date());
+		Boolean retornoSalvar = this.usuarioService.salvar(usuario);
+		
+		//se usuario existe, retorna erro.
+		if (retornoSalvar) {
+			retorno.put("erro", "Usuário " + usuario.getNome() + ", já existe.");
+			return new ResponseEntity<Map>(retorno, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 		
 		/*if (usuarioExiste) {
 			retorno.put("erro", "Usuário " + usuario.getNome() + ", já existe.");
@@ -63,7 +68,6 @@ public class UsuarioController {
 		this.usuarioService.editarUsuario(usuario);
 		
 		Map<String, Object> retorno = new HashMap<String, Object>();
-		
 		retorno.put("msg", "Usuário " + usuario.getNome() + ", editado com sucesso.");
 		
 		return new ResponseEntity<Map>(retorno, HttpStatus.OK);

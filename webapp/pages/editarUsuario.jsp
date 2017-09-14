@@ -17,7 +17,7 @@
 				<div class="form-row"> 
 					<div class="col-md-6">
 						<label for="exampleInputPassword1">Login</label> <input type="text"
-							class="form-control" ng-model="container.login" placeholder="Digite o Login">
+							class="form-control" ng-model="container.login" readonly="true" placeholder="Digite o Login">
 					</div>
 					<div class="col-md-6">
 						<label for="exampleConfirmPassword">Senha</label> <input
@@ -28,7 +28,7 @@
 	
 			<div class="form-group">
 				<label for="exampleInputEmail1">E-mail</label> <input type="text"
-					class="form-control" ng-model="container.email" placeholder="Digite o e-mail">
+					class="form-control" ng-model="container.email" readonly="true" placeholder="Digite o e-mail">
 			</div>
 	
 			<div class="form-group">

@@ -1,9 +1,11 @@
-*  {
-	margin:0;
-	padding:0;
+* {
+	margin: 0;
+	padding: 0;
 }
- 
-html, body {height:auto;}
+
+html, body {
+	height: auto;
+}
 
 .geral {
 	min-height: 100%;
@@ -17,13 +19,13 @@ html, body {height:auto;}
 
 /** css bootstrap */
 .bs-callout {
-    padding: 20px;
+	padding: 20px;
 	/* margin: 20px 0; */
-    /* border: 1px solid #eee; */
-    border-left: 1px solid #eee;
-    border-left-width: 5px;
-    border-radius: 3px;
-    border-left-color: #B22222;
+	/* border: 1px solid #eee; */
+	border-left: 1px solid #eee;
+	border-left-width: 5px;
+	border-radius: 3px;
+	border-left-color: #B22222;
 }
 
 .corTituloPainel {
@@ -39,38 +41,62 @@ html, body {height:auto;}
 }
 
 .progress-bar {
-    color: #333;
-} 
+	color: #333;
+}
 
 .heigthComboUsuario {
 	height: auto !important;
+}
+
+.bootomHome {
+	margin-bottom: 2%;
+}
+
+.label-info {
+  background-color: #5bc0de;
+}
+
+.label {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
 }
 
 /*
 Reference:
 http://www.bootstrapzen.com/item/135/simple-login-form-logo/
 */
-
 * {
-    -webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-	        box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 	outline: none;
 }
 
-    .form-control {
-	  position: relative;
-	  font-size: 16px;
-	  height: auto;
-	  padding: 10px;
-		@include box-sizing(border-box);
+.form-control {
+	position: relative;
+	font-size: 16px;
+	height: auto;
+	padding: 10px;
+	@
+	include
+	box-sizing(border-box);
+	&:
+	focus
+	{
+	z-index
+	:
+	2;
+}
 
-		&:focus {
-		  z-index: 2;
-		}
-	}
-
-
+}
 .login-form {
 	margin-top: 60px;
 }
@@ -83,25 +109,28 @@ form[role=login] {
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 }
-	form[role=login] img {
-		display: block;
-		margin: 0 auto;
-		margin-bottom: 35px;
-	}
-	form[role=login] input,
-	form[role=login] button {
-		font-size: 18px;
-		margin: 16px 0;
-	}
-	form[role=login] > div {
-		text-align: center;
-	}
-	
+
+form[role=login] img {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 35px;
+}
+
+form[role=login] input, form[role=login] button {
+	font-size: 18px;
+	margin: 16px 0;
+}
+
+form[role=login]>div {
+	text-align: center;
+}
+
 .form-links {
 	text-align: center;
 	margin-top: 1em;
 	margin-bottom: 50px;
 }
-	.form-links a {
-		color: #fff;
-	}
+
+.form-links a {
+	color: #fff;
+}

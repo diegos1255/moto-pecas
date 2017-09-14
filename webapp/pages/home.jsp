@@ -1,6 +1,11 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <div ng-controller="HomeController">
 
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item" style="color: #007bff;">Você está em</li>
+		<li class="breadcrumb-item active">Home</li>
+	</ol>
+	
 	<div class="row">
 		<div class="col-xl-3 col-sm-6 mb-3">
 			<div class="card text-white bg-primary o-hidden h-100">
@@ -38,10 +43,10 @@
 					<div class="card-body-icon">
 						<i class="fa fa-fw fa-shopping-cart"></i>
 					</div>
-					<div class="mr-5">Teste</div>
+					<div class="mr-5">Compras</div>
 				</div>
 				<a href="#" class="card-footer text-white clearfix small z-1"> <span
-					class="float-left">Teste</span> <span class="float-right">
+					class="float-left">Cadastro de compras</span> <span class="float-right">
 						<i class="fa fa-angle-right"></i>
 				</span>
 				</a>
@@ -63,6 +68,14 @@
 			</div>
 		</div>
 	</div>
+	
+	<div class="jumbotron">
+	  <h1>Olá, Diego</h1>
+	  <p>Seja bem vindo ao moto peças vitória régia.</p>
+	  <p><a class="btn btn-primary btn-lg" href="#" role="button">Meus dados</a></p>
+	</div>
+
+	<div class="card-footer small text-muted bootomHome">Último login <span class="label label-info">14/09/2017, ás 13:45.</span></div>
 
 	<div class="card mb-3">
 		<div class="card-header">

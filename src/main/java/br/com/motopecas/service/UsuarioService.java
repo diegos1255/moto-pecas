@@ -25,9 +25,17 @@ public class UsuarioService {
 	 * Metodo responsavel por salvar o usuario.
 	 * @param usuario
 	 */
-	public void salvar (Usuario usuario) {
+	public Boolean salvar (Usuario usuario) {
+		
+		Boolean existeUsuario = this.usuarioDao.existeUsuario(usuario);
+		
+		if (existeUsuario) {
+			return true;
+		}
 		
 		this.usuarioDao.persistir(usuario);
+		
+		return false;
 		
 	}
 	

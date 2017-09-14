@@ -215,7 +215,6 @@ app.controller("EditarUsuarioController", function($scope, $http, $location, $ro
 				'login'              : $scope.container.login,
 				'senha'              : $scope.container.senha,
 				'email'              : $scope.container.email,
-				'dataCadastro'       : $scope.row.dataCadastro,
 				'perfil'             : $scope.container.perfil.descricao
 		}
 
