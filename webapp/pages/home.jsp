@@ -79,24 +79,73 @@
 
 	<div class="card mb-3">
 		<div class="card-header">
-			<i class="fa fa-bell-o"></i> Ùltimos pedidos
+			<i class="fa fa-bell-o"></i> Ùltimos serviços
 		</div>
 		<div class="list-group list-group-flush small">
-			<a href="#" class="list-group-item list-group-item-action">
+			<button ng-click="detalhaServico()" class="list-group-item list-group-item-action" data-target="#modalDetalheServico" data-toggle="modal">
 				<div class="media">
 					<img class="d-flex mr-3 rounded-circle"
 						src="http://placehold.it/45x45" alt="">
 					<div class="media-body">
-						<strong>Pedido 1</strong> feito pelo cliente <strong>Diego</strong>.
-						<div class="text-muted smaller">Hora/Data pedido 13:00
-							horas, 12/09/2017.</div>
+						<strong>Serviço 1</strong> feito pelo cliente <strong>Diego</strong>.
+						<div class="text-muted smaller">Data/Hora Pedido: 12/09/2017 10:50.</div>
 					</div>
 				</div>
-			</a> <a href="#" class="list-group-item list-group-item-action"> Ver
+			</button> 
+			
+			<button ng-click="detalhaServico()" class="list-group-item list-group-item-action" data-target="#modalDetalheServico" data-toggle="modal">
+				<div class="media">
+					<img class="d-flex mr-3 rounded-circle"
+						src="http://placehold.it/45x45" alt="">
+					<div class="media-body">
+						<strong>Serviço 1</strong> feito pelo cliente <strong>Diego</strong>.
+						<div class="text-muted smaller">Data/Hora Pedido: 12/09/2017 10:50.</div>
+					</div>
+				</div>
+			</button>
+			
+			
+			<a href="#" class="list-group-item list-group-item-action"> Ver
 				todos pedidos... </a>
 		</div>
 		<div class="card-footer small text-muted">Ùltima atualização
 			13:00 horas.</div>
+	</div>
+	
+	<!-- Modal -->
+	<div class="modal fade" id="modalDetalheServico" tabindex="-1" role="dialog" aria-labelledby="modalDetalhe" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="modalDetalhe">Detalhes do Serviço</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	      
+	        <p>Data/Hora Serviço: 15/09/2017 10:52</p>
+	        <p>Cliente: {{container.pedido}}</p>
+	        <p>Tel Cliente: (41) 99999-9999</p>
+	        <p>Atendente: {{container.pedido}}</p>
+	        <p>Status: {{status}}</p>
+	        
+	        <div ng-if="enviaMensagem">
+	        	
+	        	<p>Enviar Mensagem</p>
+	        	<input type="text" class="form-control" />
+	        	
+	        	<br />
+	        	<button type="button" class="btn btn-primary">Enviar</button>
+	        
+	        </div>
+	        
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+	      </div>
+	    </div>
+	  </div>
 	</div>
 
 </div>

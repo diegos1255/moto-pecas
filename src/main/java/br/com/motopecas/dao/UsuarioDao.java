@@ -77,7 +77,7 @@ public class UsuarioDao {
 		
 		try {
 
-			query.getResultList();
+			query.getSingleResult();
 			
 		} catch (NoResultException e) {
 			return false;
