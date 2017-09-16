@@ -13,10 +13,10 @@
 					<div class="card-body-icon">
 						<i class="fa fa-fw fa-comments"></i>
 					</div>
-					<div class="mr-5">Teste</div>
+					<div class="mr-5">Serviços</div>
 				</div>
 				<a href="#" class="card-footer text-white clearfix small z-1"> <span
-					class="float-left">Teste</span> <span class="float-right">
+					class="float-left">Gerenciar Serviços</span> <span class="float-right">
 						<i class="fa fa-angle-right"></i>
 				</span>
 				</a>
@@ -28,10 +28,10 @@
 					<div class="card-body-icon">
 						<i class="fa fa-fw fa-list"></i>
 					</div>
-					<div class="mr-5">Teste</div>
+					<div class="mr-5">Fornecedores</div>
 				</div>
 				<a href="#" class="card-footer text-white clearfix small z-1"> <span
-					class="float-left">Teste</span> <span class="float-right">
+					class="float-left">Gerenciar Fornecedores</span> <span class="float-right">
 						<i class="fa fa-angle-right"></i>
 				</span>
 				</a>
@@ -58,10 +58,10 @@
 					<div class="card-body-icon">
 						<i class="fa fa-fw fa-support"></i>
 					</div>
-					<div class="mr-5">Teste</div>
+					<div class="mr-5">Despesas</div>
 				</div>
 				<a href="#" class="card-footer text-white clearfix small z-1"> <span
-					class="float-left">Teste</span> <span class="float-right">
+					class="float-left">Gerenciar Despesas</span> <span class="float-right">
 						<i class="fa fa-angle-right"></i>
 				</span>
 				</a>
