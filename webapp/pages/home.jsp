@@ -129,6 +129,13 @@
 	        <p>Tel Cliente: (41) 99999-9999</p>
 	        <p>Atendente: {{container.pedido}}</p>
 	        <p>Status: {{status}}</p>
+	        <select class="form-control heightAuto">
+	        
+	        	<option>Selecione</option>
+	        	<option>Concluído</option>
+	        	<option>Andamento</option>
+	        	
+	        </select>
 	        
 	        <div ng-if="enviaMensagem">
 	        	

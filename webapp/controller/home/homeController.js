@@ -10,9 +10,9 @@ app.controller("HomeController", function($scope, $http) {
 	$scope.detalhaServico = function () {
 		
 		$scope.container.pedido = "Diego";
-		$scope.status = 'Pendente';
+		$scope.status = 'Andamento';
 		
-		if ($scope.status === 'Pendente') {
+		if ($scope.status === 'Andamento') {
 			
 			$scope.enviaMensagem = true;
 			
